@@ -16,19 +16,28 @@ class AllPokemon extends Component {
         }
     }
 
+    componentDidMount = () => {
+        this.getPokemon();
+    }
+
+    /**
+     * @description sets this.state.pokemon to an array of objects with the results returned (results are pokemon).
+     */
     getPokemon = async () => {
-        axios.get('https://pokeapi.co/api/v2/pokemon')
+        await axios.get('https://pokeapi.co/api/v2/pokemon')
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
+            this.setState({pokemon : res.data.results})
         }).catch((err) => {
             console.error(err);
         })
         
+        console.log(this.state.pokemon);
     };
     render() { 
         return ( 
-
-    
+            <>
+            </>    
          );
     }
 }
