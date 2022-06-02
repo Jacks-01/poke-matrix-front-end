@@ -7,8 +7,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Pokemon from './Pokemon';
 
-const server = process.env.BACK_END_URL;
-
+//* Setting up our class. It holds our pokemon data in state (pokemons).
 class AllPokemon extends Component {
 	constructor(props) {
 		super(props);
@@ -17,6 +16,7 @@ class AllPokemon extends Component {
 		};
 	}
 
+	// calls getPokemon() when component is loaded.
 	componentDidMount = () => {
 		this.getPokemon();
 	};
@@ -38,6 +38,10 @@ class AllPokemon extends Component {
 		console.log(this.state.pokemons);
 	};
 	render() {
+		
+		/**
+		 * Maps over our pokemons array (in state) and displays them
+		 */
 		return (
 			this.state.pokemons &&
 			this.state.pokemons.map((pokemon, idx) => {

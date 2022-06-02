@@ -13,6 +13,9 @@ import Typography from '@mui/material/Typography';
 
 
 
+// TODO: Change the alt to a pokemon description. You will have to make changes on the backend too
+// TODO: Customize card
+
 export default function MediaCard(props) {
   return (
     <Card sx={{ maxWidth: 600 }}>
