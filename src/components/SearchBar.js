@@ -17,7 +17,7 @@ export default function SearchBar(props) {
 			noValidate
 			autoComplete="off"
 		>
-			<TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={props.handleSearch} />
+			<TextField id="outlined-basic" label="pokemon..." variant="outlined" onChange={props.handleSearch} />
 		</Box>
 	);
 }

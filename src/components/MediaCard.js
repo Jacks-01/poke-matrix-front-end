@@ -18,10 +18,10 @@ import Typography from '@mui/material/Typography';
 
 export default function MediaCard(props) {
   return (
-    <Card sx={{ maxWidth: 600 }}>
+    <Card sx={{ maxWidth: 600 }} raised>
       <CardMedia
         component="img"
-        height="600"
+        height="300"
         image={props.image}
         alt="green iguana"
       />

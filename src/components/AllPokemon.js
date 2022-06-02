@@ -3,6 +3,7 @@
  * @description this component is responsible for making the call to the PokeAPI and Displaying a list.
  */
 
+import { Grid } from '@mui/material';
 import axios from 'axios';
 import React, { Component } from 'react';
 import PokemonList from './PokemonList';
@@ -39,31 +40,37 @@ class AllPokemon extends Component {
 		console.log(this.state.pokemons);
 	};
 
-		getOnePokemon = async (pokemon) => {
-			await axios.get(`http://localhost:3001/pokemon?name=${pokemon}`)
-				.then((res) => {
-					console.log(res.data);
-					this.setState({pokemons: res.data});
-				}).catch((err) => {
-					console.error(err);
-				});
-		}
+	getOnePokemon = async (pokemon) => {
+		await axios
+			.get(`http://localhost:3001/pokemon?name=${pokemon}`)
+			.then((res) => {
+				console.log(res.data);
+				this.setState({ pokemons: res.data });
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
 
-		handleSearch = (e) => {
-			e.preventDefault();
-			console.log(e.target.value);
+	handleSearch = (e) => {
+		e.preventDefault();
+		console.log(e.target.value);
 
-			let searchedPokemon = e.target.value;
-			this.getOnePokemon(searchedPokemon)
-		}
+		let searchedPokemon = e.target.value;
+		this.getOnePokemon(searchedPokemon.toLowerCase());
+	};
 	render() {
 		/**
 		 * Maps over our pokemons array (in state) and displays them
 		 */
 		return (
 			<>
-				<SearchBar handleSearch={this.handleSearch}/>
-				<PokemonList pokemons={this.state.pokemons} />
+				<SearchBar handleSearch={this.handleSearch} />
+				<Grid container>
+					<Grid container columns={5} item xs={12} spacing={1}>
+						<PokemonList pokemons={this.state.pokemons} />
+					</Grid>
+				</Grid>
 			</>
 		);
 	}

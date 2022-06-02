@@ -9,13 +9,11 @@ import MediaCard from './MediaCard';
 class Pokemon extends Component {
 	render() {
 		return (
-			<div>
-				<MediaCard
-					image={this.props.image}
-					name={this.props.name}
-					id={this.props.id}
-				/>
-			</div>
+			<MediaCard
+				image={this.props.image}
+				name={this.props.name}
+				id={this.props.id}
+			/>
 		);
 	}
 }

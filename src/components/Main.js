@@ -11,7 +11,6 @@ class Main extends Component {
 		return (
 			<div>
 				<AllPokemon />
-				
 			</div>
 		);
 	}
