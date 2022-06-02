@@ -66,11 +66,9 @@ class AllPokemon extends Component {
 		return (
 			<>
 				<SearchBar handleSearch={this.handleSearch} />
-				{/* <Grid container spacing={2}> */}
-					<Grid container item columns={5} columnGap={3} rowGap={3}>
+					<Grid container item columns={5} columnGap={10} rowGap={5}>
 						<PokemonList pokemons={this.state.pokemons} />
 					</Grid>
-				{/* </Grid> */}
 			</>
 		);
 	}
