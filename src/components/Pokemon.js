@@ -10,9 +10,8 @@ class Pokemon extends Component {
 	render() {
 		return (
 			<MediaCard
-				image={this.props.image}
-				name={this.props.name}
-				id={this.props.id}
+				handleFavorite={this.props.handleFavorite}
+				pokemon={this.props.pokemon}
 			/>
 		);
 	}

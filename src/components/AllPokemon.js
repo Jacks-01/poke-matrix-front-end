@@ -59,6 +59,10 @@ class AllPokemon extends Component {
 		let searchedPokemon = e.target.value;
 		this.getOnePokemon(searchedPokemon.toLowerCase());
 	};
+
+	// handleFavorite = (e) => {
+	// 	this.pokemons[0].liked = true;
+	// }
 	render() {
 		/**
 		 * Maps over our pokemons array (in state) and displays them
@@ -67,7 +71,7 @@ class AllPokemon extends Component {
 			<>
 				<SearchBar handleSearch={this.handleSearch} />
 					<Grid container item columns={5} columnGap={10} rowGap={5}>
-						<PokemonList pokemons={this.state.pokemons} />
+						<PokemonList pokemons={this.state.pokemons} handleFavorite={this.handleFavorite}/>
 					</Grid>
 			</>
 		);

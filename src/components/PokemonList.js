@@ -17,6 +17,11 @@ class PokemonList extends Component {
 						name={pokemon.name}
 						image={pokemon.sprites.front_default}
 						id={pokemon.id}
+                        height={pokemon.height}
+                        weight={pokemon.weight}
+                        handleFavorite={this.props.handleFavorite}
+                        pokemon={pokemon}
+                        
 					/>
 				);
 			})
