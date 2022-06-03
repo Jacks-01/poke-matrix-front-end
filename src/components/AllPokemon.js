@@ -15,6 +15,9 @@ class AllPokemon extends Component {
 		super(props);
 		this.state = {
 			pokemons: [],
+			user: {
+				favorites: []
+			}
 		};
 	}
 
@@ -60,9 +63,17 @@ class AllPokemon extends Component {
 		this.getOnePokemon(searchedPokemon.toLowerCase());
 	};
 
-	// handleFavorite = (e) => {
-	// 	this.pokemons[0].liked = true;
-	// }
+		addUserFavorite = async (pokemon) => {
+			console.log(`pokemon name: ${this.pokemon.name}`)
+			this.setState({favorite: true});
+			this.props.addToUserFavorites(pokemon)
+		};
+
+		// removeFavorite = async () => {
+		// 	this.setState({favorite: false});
+		// 	console.log(`pokemon we are marking as favorite: ${this.state.pokemons.favorite}`)
+			
+		// };
 	render() {
 		/**
 		 * Maps over our pokemons array (in state) and displays them
@@ -71,7 +82,7 @@ class AllPokemon extends Component {
 			<>
 				<SearchBar handleSearch={this.handleSearch} />
 					<Grid container item columns={5} columnGap={10} rowGap={5}>
-						<PokemonList pokemons={this.state.pokemons} handleFavorite={this.handleFavorite}/>
+						<PokemonList pokemons={this.state.pokemons} addUserFavorite={this.addUserFavorite} removeFavorite={this.removeFavorite}/>
 					</Grid>
 			</>
 		);

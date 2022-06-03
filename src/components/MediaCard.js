@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { IconButton } from '@mui/material';
+import { useState } from 'react';
 
 
 
@@ -20,6 +21,25 @@ import { IconButton } from '@mui/material';
 
 
 export default function MediaCard(props) {
+
+  const [fav, setFav] = useState(false);
+
+   const handleFavorite = () => {
+      let pokemon = props.pokemon;
+      console.log(`pokemon variable: ${pokemon.name}`)
+      if (fav === true) {
+        // add fav property from pokemon obj
+        setFav(false);
+        console.log(`pokemon name ${pokemon.name}`);
+        props.addFavorite(fav, pokemon) 
+      } else {
+        // remove from pokemon obj
+        setFav(true);
+        console.log(`(false) pokemon name ${pokemon.name}`);
+        props.removeFavorite(fav, props.pokemon)
+      }
+  }
+
   return (
     <Card sx={{ maxWidth: 600 }} raised>
       <CardMedia
@@ -36,12 +56,16 @@ export default function MediaCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton onClick={props.makeFavorite} disabled={false}>
-          <FavoriteIcon/>
-        </IconButton>
-        <IconButton show='false' onClick={props.removeFavorite}>
+        {!fav &&
+        <IconButton onClick={handleFavorite}>
           <FavoriteBorderIcon/>
         </IconButton>
+        }
+        {fav &&
+        <IconButton onClick={() => { setFav(!fav); handleFavorite()}}>
+          <FavoriteIcon/>
+        </IconButton>
+        }
       </CardActions>
     </Card>
   );

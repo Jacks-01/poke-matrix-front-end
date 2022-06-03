@@ -19,7 +19,8 @@ class PokemonList extends Component {
 						id={pokemon.id}
                         height={pokemon.height}
                         weight={pokemon.weight}
-                        handleFavorite={this.props.handleFavorite}
+                        addUserFavorite={this.props.addUserFavorite}
+                        // removeUserFavorite={this.props.removeFavorite}
                         pokemon={pokemon}
                         
 					/>
