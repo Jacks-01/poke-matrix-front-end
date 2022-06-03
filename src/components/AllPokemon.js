@@ -64,14 +64,17 @@ class AllPokemon extends Component {
 	};
 
 		addUserFavorite = async (pokemon) => {
-			console.log(`pokemon name: ${pokemon.name}`)
+			console.log(`pokemon we are adding as favorite:${pokemon.name}`)
 			this.setState({favorite: true});
 			this.props.addToUserFavorites(pokemon)
+			
+			
 		};
 
 		removeUserFavorite = async (pokemon) => {
 			this.setState({favorite: false});
-			console.log(`pokemon we are marking as favorite: ${pokemon.name}`)
+			console.log(`pokemon we are removing as favorite: ${pokemon.name}`)
+			this.props.removeFromUserFavorites(pokemon);
 			
 		};
 	render() {

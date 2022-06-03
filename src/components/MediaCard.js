@@ -8,7 +8,6 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -26,17 +25,16 @@ export default function MediaCard(props) {
 
    const handleFavorite = () => {
       let pokemon = props.pokemon;
-      console.log(`pokemon variable: ${pokemon.name}`)
       if (fav === true) {
         // add fav property from pokemon obj
         setFav(false);
-        console.log(`pokemon name ${pokemon.name}`);
-        props.addFavorite(fav, pokemon) 
+        // console.log(`pokemon name ${pokemon.name}`);
+        props.removeFavorite(fav, pokemon)
       } else {
         // remove from pokemon obj
         setFav(true);
-        console.log(`(false) pokemon name ${pokemon.name}`);
-        props.removeFavorite(fav, pokemon)
+        // console.log(`(false) pokemon name ${pokemon.name}`);
+        props.addFavorite(fav, pokemon) 
       }
   }
 
