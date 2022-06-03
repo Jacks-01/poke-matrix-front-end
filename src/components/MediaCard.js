@@ -36,7 +36,7 @@ export default function MediaCard(props) {
         // remove from pokemon obj
         setFav(true);
         console.log(`(false) pokemon name ${pokemon.name}`);
-        props.removeFavorite(fav, props.pokemon)
+        props.removeFavorite(fav, pokemon)
       }
   }
 
