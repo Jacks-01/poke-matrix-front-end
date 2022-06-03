@@ -23,6 +23,7 @@ class Pokemon extends Component {
 	removeFavorite = (fav, pokemon) => {
 		this.setState({favorite: false}, 
 			console.log(`state of favorite in pokemon.js: ${this.state.favorite}`))
+			this.props.removeUserFavorite(pokemon);
 	}
 	render() {
 		return (

@@ -62,7 +62,7 @@ export default function MediaCard(props) {
         </IconButton>
         }
         {fav &&
-        <IconButton onClick={() => { setFav(!fav); handleFavorite()}}>
+        <IconButton onClick={handleFavorite}>
           <FavoriteIcon/>
         </IconButton>
         }
