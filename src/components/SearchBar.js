@@ -13,6 +13,7 @@ export default function SearchBar(props) {
 			component="form"
 			sx={{
 				'& > :not(style)': { m: 1, width: '25ch' },
+				py: 3, px: 100
 			}}
 			noValidate
 			autoComplete="off"

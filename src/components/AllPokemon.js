@@ -4,6 +4,7 @@
  */
 
 import { Grid } from '@mui/material';
+import {Container } from '@mui/material'
 import axios from 'axios';
 import React, { Component } from 'react';
 import PokemonList from './PokemonList';
@@ -83,10 +84,12 @@ class AllPokemon extends Component {
 		 */
 		return (
 			<>
-				<SearchBar handleSearch={this.handleSearch} />
-					<Grid container item columns={5} columnGap={10} rowGap={5}>
+					<SearchBar handleSearch={this.handleSearch}/>
+				<Container maxWidth='xl'>
+					<Grid container columns={5} columnGap={10} rowGap={5}>
 						<PokemonList pokemons={this.state.pokemons} addUserFavorite={this.addUserFavorite} removeUserFavorite={this.removeUserFavorite}/>
 					</Grid>
+				</Container>
 			</>
 		);
 	}
