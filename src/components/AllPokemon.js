@@ -34,21 +34,21 @@ class AllPokemon extends Component {
 		await axios
 			.get('http://localhost:3001/pokemon')
 			.then((res) => {
-				console.log(res.data);
+				// console.log(res.data);
 				this.setState({ pokemons: res.data });
 			})
 			.catch((err) => {
 				console.error(err);
 			});
 
-		console.log(this.state.pokemons);
+		// console.log(this.state.pokemons);
 	};
 
 	getOnePokemon = async (pokemon) => {
 		await axios
 			.get(`http://localhost:3001/pokemon?name=${pokemon}`)
 			.then((res) => {
-				console.log(res.data);
+				// console.log(res.data);
 				this.setState({ pokemons: res.data });
 			})
 			.catch((err) => {
@@ -58,14 +58,14 @@ class AllPokemon extends Component {
 
 	handleSearch = (e) => {
 		e.preventDefault();
-		console.log(e.target.value);
+		// console.log(e.target.value);
 
 		let searchedPokemon = e.target.value;
 		this.getOnePokemon(searchedPokemon.toLowerCase());
 	};
 
 		addUserFavorite = async (pokemon) => {
-			console.log(`pokemon we are adding as favorite:${pokemon.name}`)
+			// console.log(`pokemon we are adding as favorite:${pokemon.name}`)
 			this.setState({favorite: true});
 			this.props.addToUserFavorites(pokemon)
 			
@@ -74,7 +74,7 @@ class AllPokemon extends Component {
 
 		removeUserFavorite = async (pokemon) => {
 			this.setState({favorite: false});
-			console.log(`pokemon we are removing as favorite: ${pokemon.name}`)
+			// console.log(`pokemon we are removing as favorite: ${pokemon.name}`)
 			this.props.removeFromUserFavorites(pokemon);
 			
 		};
