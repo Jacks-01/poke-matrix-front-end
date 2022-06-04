@@ -24,6 +24,7 @@ class AllPokemon extends Component {
 
 	// calls getPokemon() when component is loaded.
 	componentDidMount = () => {
+		document.body.style.backgroundColor = '#D1C5E7'
 		this.getPokemon();
 	};
 
