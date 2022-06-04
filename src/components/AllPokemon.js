@@ -24,7 +24,7 @@ class AllPokemon extends Component {
 
 	// calls getPokemon() when component is loaded.
 	componentDidMount = () => {
-		document.body.style.backgroundColor = '#D1C5E7'
+		document.body.style.backgroundColor = '#c5cae9'
 		this.getPokemon();
 	};
 
@@ -85,9 +85,9 @@ class AllPokemon extends Component {
 		 */
 		return (
 			<>
-					<SearchBar handleSearch={this.handleSearch}/>
-				<Container maxWidth='xl'>
-					<Grid container columns={5} columnGap={10} rowGap={5}>
+				<SearchBar handleSearch={this.handleSearch}/>
+				<Container maxWidth='xl' >
+					<Grid container columns={5} columnGap={10} rowGap={5} >
 						<PokemonList pokemons={this.state.pokemons} addUserFavorite={this.addUserFavorite} removeUserFavorite={this.removeUserFavorite}/>
 					</Grid>
 				</Container>

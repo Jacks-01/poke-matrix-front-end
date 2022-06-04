@@ -6,6 +6,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 export default function SearchBar(props) {
 	return (
@@ -18,7 +19,8 @@ export default function SearchBar(props) {
 			noValidate
 			autoComplete="off"
 		>
-			<TextField id="outlined-basic" label="Search" variant="outlined" onChange={props.handleSearch} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}/>
+			<TextField id="outlined-basic" label="Search" variant="outlined" onChange={props.handleSearch} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault();}}/>
+			<Button variant='contained' sx={{minWidth: '28ch', bgcolor: '#591ba4', '&.MuiButtonBase-root:hover' : {bgcolor: '#945bc4'}}}>Favorites</Button>
 		</Box>
 	);
 }
