@@ -14,13 +14,32 @@ export default function SearchBar(props) {
 			component="form"
 			sx={{
 				'& > :not(style)': { m: 1, width: '25ch' },
-				py: 3, px: 100
+				py: 3,
+				px: 100,
 			}}
 			noValidate
 			autoComplete="off"
 		>
-			<TextField id="outlined-basic" label="Search" variant="outlined" onChange={props.handleSearch} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault();}}/>
-			<Button variant='contained' sx={{minWidth: '28ch', bgcolor: '#591ba4', '&.MuiButtonBase-root:hover' : {bgcolor: '#945bc4'}}}>Favorites</Button>
+			<TextField
+				id="outlined-basic"
+				label="Search"
+				variant="outlined"
+				onChange={props.handleSearch}
+				onKeyPress={(e) => {
+					e.key === 'Enter' && e.preventDefault();
+				}}
+			/>
+			<Button
+				onClick={props.displayFavorites}
+				variant="contained"
+				sx={{
+					minWidth: '28ch',
+					bgcolor: '#591ba4',
+					'&.MuiButtonBase-root:hover': { bgcolor: '#945bc4' },
+				}}
+			>
+				Favorites
+			</Button>
 		</Box>
 	);
 }

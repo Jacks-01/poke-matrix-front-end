@@ -68,6 +68,7 @@ class AllPokemon extends Component {
 		addUserFavorite = async (pokemon) => {
 			// console.log(`pokemon we are adding as favorite:${pokemon.name}`)
 			this.setState({favorite: true});
+			// this.state.user.favorites.push(pokemon)
 			this.props.addToUserFavorites(pokemon)
 			
 			
@@ -75,9 +76,25 @@ class AllPokemon extends Component {
 
 		removeUserFavorite = async (pokemon) => {
 			this.setState({favorite: false});
+			// let updatedPokemon = this.state.user.favorites.filter((element) => {
+			// 	return element.name !== pokemon.name;
+			// });
+			// console.log(`this is updatedPokemon: ${updatedPokemon}`);
+			// this.setState({ favorites: updatedPokemon });
 			// console.log(`pokemon we are removing as favorite: ${pokemon.name}`)
 			this.props.removeFromUserFavorites(pokemon);
 			
+		};
+
+		displayFavorites = async () => {
+			// this.setState({pokemons: this.state.user.favorites})
+			 await axios.get('http://localhost:3001/users/')
+				.then((res) => {
+					console.log(res.data[0].favorites);
+					this.setState({pokemons: res.data[0].favorites})
+				}).catch((err) => {
+					console.error(err);
+				});
 		};
 	render() {
 		/**
@@ -85,7 +102,7 @@ class AllPokemon extends Component {
 		 */
 		return (
 			<>
-				<SearchBar handleSearch={this.handleSearch}/>
+				<SearchBar handleSearch={this.handleSearch} displayFavorites={this.displayFavorites}/>
 				<Container maxWidth='xl' >
 					<Grid container columns={5} columnGap={10} rowGap={5} >
 						<PokemonList pokemons={this.state.pokemons} addUserFavorite={this.addUserFavorite} removeUserFavorite={this.removeUserFavorite}/>
