@@ -25,7 +25,7 @@ class About extends Component {
 						</Grid>
 					</Grid>
 					<Container>
-						<Paper elevation={4} sx={{ bgcolor: '#f3e5f5', width: 'auto' }}>
+						<Paper elevation={4} sx={{ bgcolor: '#f3e5f5', width: 'auto', px: 2, py:2, my: 2 }}>
 							I'm a software developer currently studying full-stack development
 							at DeltaV Code School. I love working with people and creating
 							quality connections in my community. I have 3+ years of experience
