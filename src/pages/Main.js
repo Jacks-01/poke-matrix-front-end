@@ -3,7 +3,7 @@
  * @description Contains user data to send to DB and update favorites.
  */
 import React, { Component } from 'react';
-import AllPokemon from './AllPokemon';
+import AllPokemon from '../components/AllPokemon';
 import axios from 'axios';
 
 class Main extends Component {
