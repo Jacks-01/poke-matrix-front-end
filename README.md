@@ -21,7 +21,14 @@
 ## Version
     - 1.0.0
       - Update Log:
-        - 
+        - 6/4/2022
+          - Allowed users to view all pokemon 
+          - Added a search bar that allows users to search for a specific pokemon
+          - Allowed users to mark a pokemon as 'favorite'
+          - Added a button that will display all pokemon currently marked as 'favorite'
+          - Added a navigation bar that links to the `About Me` page
+          - Styled the page
+          - 
 
 ## Libraries, Frameworks, and Packages
 
