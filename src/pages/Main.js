@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import AllPokemon from '../components/AllPokemon';
 import axios from 'axios';
+const URL = process.env.REACT_APP_URL;
 
 class Main extends Component {
 	constructor(props) {
@@ -55,7 +56,7 @@ class Main extends Component {
 	updateUser = async (updatedUser) => {
 		console.log(`user before updateUser: ${updatedUser.favorites}`);
 		await axios
-			.patch(`http://localhost:3001/users/${updatedUser._id}`, updatedUser)
+			.patch(`${URL}/users/${updatedUser._id}`, updatedUser)
 			.then((res) => {
 				console.log(res);
 			})

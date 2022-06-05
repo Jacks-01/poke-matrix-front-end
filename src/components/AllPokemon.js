@@ -9,6 +9,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import PokemonList from './PokemonList';
 import SearchBar from './SearchBar';
+const URL = process.env.REACT_APP_URL
 
 //* Setting up our class. It holds our pokemon data in state (pokemons).
 class AllPokemon extends Component {
@@ -25,6 +26,7 @@ class AllPokemon extends Component {
 	// calls getPokemon() when component is loaded.
 	componentDidMount = () => {
 		document.body.style.backgroundColor = '#c5cae9'
+		console.log(URL);
 		this.getPokemon();
 	};
 
@@ -33,7 +35,7 @@ class AllPokemon extends Component {
 	 */
 	getPokemon = async () => {
 		await axios
-			.get('http://localhost:3001/pokemon')
+			.get(`${URL}/pokemon`)
 			.then((res) => {
 				// console.log(res.data);
 				this.setState({ pokemons: res.data });
@@ -47,7 +49,7 @@ class AllPokemon extends Component {
 
 	getOnePokemon = async (pokemon) => {
 		await axios
-			.get(`http://localhost:3001/pokemon?name=${pokemon}`)
+			.get(`${URL}/pokemon?name=${pokemon}`)
 			.then((res) => {
 				// console.log(res.data);
 				this.setState({ pokemons: res.data });
@@ -88,7 +90,7 @@ class AllPokemon extends Component {
 
 		displayFavorites = async () => {
 			// this.setState({pokemons: this.state.user.favorites})
-			 await axios.get('http://localhost:3001/users/')
+			 await axios.get(`${URL}/users`)
 				.then((res) => {
 					console.log(res.data[0].favorites);
 					this.setState({pokemons: res.data[0].favorites})
