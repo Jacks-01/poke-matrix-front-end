@@ -4,6 +4,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import {Routes, Route, BrowserRouter, Link} from 'react-router-dom'
+import Main from '../pages/Main';
+import About from '../pages/About';
 
 
 export default function TopNav() {
@@ -14,7 +17,8 @@ export default function TopNav() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Poke-Matrix
           </Typography>
-          <Button color="inherit">About Me</Button>
+
+          <Button color="inherit" component={Link} to={'/About'}>About Me</Button>
         </Toolbar>
       </AppBar>
     </Box>
