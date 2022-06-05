@@ -28,7 +28,10 @@
           - Added a button that will display all pokemon currently marked as 'favorite'
           - Added a navigation bar that links to the `About Me` page
           - Styled the page
-          - 
+        - 6/5/2022
+          - Added a github icon that takes users to my github profile.
+          - deployed app to Heroku and Netlify
+          - removed server from public directories, moved new URL to a key.
 
 ## Libraries, Frameworks, and Packages
 
