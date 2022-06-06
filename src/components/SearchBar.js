@@ -4,9 +4,7 @@
  */
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
+import { Button, TextField, Box } from '@mui/material';
 
 export default function SearchBar(props) {
 	return (
@@ -25,6 +23,7 @@ export default function SearchBar(props) {
 				label="Search"
 				variant="outlined"
 				onChange={props.handleSearch}
+				// This prevents the user from hitting enter and submitting it, since it's technically a form
 				onKeyPress={(e) => {
 					e.key === 'Enter' && e.preventDefault();
 				}}
