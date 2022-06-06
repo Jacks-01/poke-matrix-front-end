@@ -14,7 +14,7 @@ export default function TopNav() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{bgcolor: '#591ba4'}}>
         <Toolbar>
-          <Typography component={Link} to={'/'}variant="h6" sx={{ flexGrow: 1, color: 'white' }}>
+          <Typography component={Link} to={'/'}variant="h6" sx={{flexGrow: 1, color: 'white', '&.MuiTypography-h6:hover': { color: '#f48fb1'}}}>
             Poke-Matrix
           </Typography>
           <IconButton onClick={() => {window.location.href = 'https://github.com/Jacks-01'}} sx={{color: 'white'}}>
