@@ -1,4 +1,4 @@
-import { Paper, Grid } from '@mui/material';
+import { Paper, Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { Component } from 'react';
 
@@ -10,17 +10,19 @@ class About extends Component {
 		return (
 			<Container sx={{ py: 5, display: 'flex', justifyContent: 'center' }}>
 				<Paper elevation={10} sx={{ bgcolor: '#e1bee7', width: 700 }}>
-					<h1 style={{ display: 'flex', justifyContent: 'center' }}>
-						{' '}
-						Jack Stubblefield{' '}
-					</h1>
+					{/* <h1 style={{ display: 'flex', justifyContent: 'center'}}>
+						Jack Stubblefield
+					</h1> */}
+					<Typography fontFamily='Roboto' color='black'component='h1' mt={2} align='center' fontSize={'2.5rem'}>
+						Jack Stubblefield
+					</Typography>
 					<br />
 					<Grid container justifyContent={'center'}>
 						<Grid item>
 							<img
-								src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10084.png"
+								src="https://avatars.githubusercontent.com/u/92601085?v=4"
 								alt="me"
-								height={500}
+								height={400}
 							/>
 						</Grid>
 					</Grid>
