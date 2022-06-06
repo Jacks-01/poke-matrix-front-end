@@ -88,10 +88,13 @@ class AllPokemon extends Component {
 		 */
 		return (
 			<>
-				<SearchBar
-					handleSearch={this.handleSearch}
-					displayFavorites={this.displayFavorites}
-				/>
+				<Container sx={{display: 'flex', justifyContent: 'center', p: 4, width: '1rem'}}>
+					<SearchBar
+						handleSearch={this.handleSearch}
+						displayFavorites={this.displayFavorites}
+					/>
+				</Container>
+
 				<Container maxWidth="xl">
 					<Grid container columns={5} columnGap={10} rowGap={5}>
 						<PokemonList
