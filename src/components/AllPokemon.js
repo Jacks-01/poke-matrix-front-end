@@ -16,9 +16,6 @@ class AllPokemon extends Component {
 		super(props);
 		this.state = {
 			pokemons: [],
-			user: {
-				favorites: [],
-			},
 		};
 	}
 
@@ -43,6 +40,7 @@ class AllPokemon extends Component {
 			});
 	};
 
+	// called whenever the FULL name of the pokemon is typed into the search bar
 	getOnePokemon = async (pokemon) => {
 		await axios
 			.get(`${URL}/pokemon?name=${pokemon}`)
@@ -61,16 +59,19 @@ class AllPokemon extends Component {
 		this.getOnePokemon(searchedPokemon.toLowerCase());
 	};
 
+	// adds to the user profile
 	addUserFavorite = async (pokemon) => {
 		this.setState({ favorite: true });
 		this.props.addToUserFavorites(pokemon);
 	};
 
+	// removes from the user profile
 	removeUserFavorite = async (pokemon) => {
 		this.setState({ favorite: false });
 		this.props.removeFromUserFavorites(pokemon);
 	};
 
+	// grabs the user, then updates state with only the favorite pokemon
 	displayFavorites = async () => {
 		await axios
 			.get(`${URL}/users`)

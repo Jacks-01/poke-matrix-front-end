@@ -23,6 +23,7 @@ export default function SearchBar(props) {
 				label="Search"
 				variant="outlined"
 				onChange={props.handleSearch}
+				// This prevents the user from hitting enter and submitting it, since it's technically a form
 				onKeyPress={(e) => {
 					e.key === 'Enter' && e.preventDefault();
 				}}

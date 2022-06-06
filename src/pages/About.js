@@ -1,3 +1,8 @@
+/**
+ * @file About.js
+ * @description My about me page
+ */
+
 import { Paper, Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { Component } from 'react';
