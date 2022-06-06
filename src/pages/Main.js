@@ -22,13 +22,7 @@ class Main extends Component {
 
 	addToUserFavorites = async (pokemon) => {
 		// add to user pokemon favorite array
-		console.log(
-			`this is our pokemon marked as favorite in main.js ${pokemon.name}`
-		);
 		this.state.user.favorites.push(pokemon);
-		console.log(
-			`this is our favorites array after adding a new one: ${this.state.user.favorites}`
-		);
 		this.updateUser(this.state.user);
 	};
 
@@ -37,13 +31,7 @@ class Main extends Component {
 		let updatedPokemon = this.state.user.favorites.filter((element) => {
 			return element.name !== pokemon.name;
 		});
-		console.log(`this is updatedPokemon: ${updatedPokemon}`);
 		this.setState({ favorites: updatedPokemon });
-		console.log(
-			`our updated pokemon array after removing ${
-				pokemon.name
-			} from favorites: ${JSON.stringify(updatedPokemon)}`
-		);
 		let updatedUser = {
 			_id: this.state.user._id,
 			username: this.state.user.username,
@@ -54,7 +42,6 @@ class Main extends Component {
 	};
 
 	updateUser = async (updatedUser) => {
-		console.log(`user before updateUser: ${updatedUser.favorites}`);
 		await axios
 			.patch(`${URL}/users/${updatedUser._id}`, updatedUser)
 			.then((res) => {

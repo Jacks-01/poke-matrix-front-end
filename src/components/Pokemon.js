@@ -15,16 +15,14 @@ class Pokemon extends Component {
 	}
 	addFavorite = (fav, pokemon) => {
 		this.setState(
-			{ favorite: true },
-			console.log(`state of favorite in pokemon.js: ${this.state.favorite}`)
+			{ favorite: true }
 		);
 		this.props.addUserFavorite(pokemon);
 	};
 
 	removeFavorite = (fav, pokemon) => {
 		this.setState(
-			{ favorite: false },
-			console.log(`state of favorite in pokemon.js: ${this.state.favorite}`)
+			{ favorite: false }
 		);
 		this.props.removeUserFavorite(pokemon);
 	};

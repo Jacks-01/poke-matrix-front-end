@@ -17,10 +17,12 @@ class App extends Component {
 				<BrowserRouter>
 					<TopNav />
 					<Routes>
-						<Route path="/" element={<Main/>}>
+						<Route path="/" element={<Main />}>
 							{' '}
 						</Route>
-                        <Route path='/about' element={<About/>}>About</Route>
+						<Route path="/about" element={<About />}>
+							About
+						</Route>
 					</Routes>
 				</BrowserRouter>
 			</>
